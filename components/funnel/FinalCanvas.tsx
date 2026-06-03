@@ -285,7 +285,7 @@ export const FinalCanvas: React.FC<FinalCanvasProps> = ({
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-black font-bubbles tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-blue-600 drop-shadow-[0_4px_8px_rgba(0,0,0,0.15)] py-1"
+            className="text-4xl md:text-5xl font-black font-bubbles tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A5229] via-[#E65C00] to-[#F9D423] drop-shadow-[0_4px_8px_rgba(0,0,0,0.15)] py-1"
           >
             {dateManifest?.title}
           </motion.h1>
@@ -347,18 +347,31 @@ export const FinalCanvas: React.FC<FinalCanvasProps> = ({
           <SurrenderSummary />
         </div>
 
-        {/* Personal Reset Option */}
-        {onReset && (
-          <motion.button
+        {/* Actions Row */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full max-w-md mx-auto">
+          {onReset && (
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.8 }}
+              whileHover={{ opacity: 1, scale: 1.02 }}
+              onClick={onReset}
+              className="w-full sm:w-auto px-6 py-3 border-4 border-black bg-white text-black font-extrabold text-xs tracking-widest uppercase transition-all shadow-[4px_4px_0px_#000] cursor-pointer"
+            >
+              Reset the plan
+            </motion.button>
+          )}
+          <motion.a
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
-            whileHover={{ opacity: 1, scale: 1.02 }}
-            onClick={onReset}
-            className="px-6 py-3 border-4 border-black bg-white text-black font-extrabold text-xs tracking-widest uppercase transition-all shadow-[4px_4px_0px_#000] cursor-pointer"
+            animate={{ opacity: 1 }}
+            whileHover={{ scale: 1.02 }}
+            href="https://www.kendren.us"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-6 py-3 border-4 border-black bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs tracking-widest uppercase transition-all shadow-[4px_4px_0px_#000] text-center inline-block cursor-pointer"
           >
-            Reset the plan
-          </motion.button>
-        )}
+            learn more about your king.
+          </motion.a>
+        </div>
       </div>
     </div>
   );
