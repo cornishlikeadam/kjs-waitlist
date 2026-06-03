@@ -60,7 +60,7 @@ function FunnelContainer() {
 
   // Retrieve Scarcity Engine session simulation counter from config route
   useEffect(() => {
-    fetch("/api/funnel/config")
+    fetch("/thewaitlist/api/funnel/config")
       .then((res) => res.json())
       .then((data) => {
         if (data.activeSessions !== undefined) {
@@ -163,7 +163,7 @@ function FunnelContainer() {
     };
 
     try {
-      const res = await fetch("/api/funnel/submit", {
+      const res = await fetch("/thewaitlist/api/funnel/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formattedPayload),

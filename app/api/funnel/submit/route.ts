@@ -66,8 +66,6 @@ export async function POST(request: Request) {
       parsedDate = new Date(selectedDate);
       if (isNaN(parsedDate.getTime())) {
         errors.push('Selected date must be a valid ISO date string.');
-      } else if (parsedDate.getTime() < Date.now() - 60000) { // allow a 1 min buffer
-        errors.push('Selected date must be in the future.');
       }
     }
 

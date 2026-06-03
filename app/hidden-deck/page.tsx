@@ -47,7 +47,7 @@ export default function AdminDashboard() {
       setLoading(true);
       setError("");
       
-      const res = await fetch("/api/admin/leads");
+      const res = await fetch("/thewaitlist/api/admin/leads");
       if (res.status === 401) {
         setError("Unauthorized access. Redirecting...");
         setTimeout(() => {
@@ -83,7 +83,7 @@ export default function AdminDashboard() {
     try {
       setUpdatingConfig(true);
       setSaveSuccess("");
-      const res = await fetch("/api/admin/config", {
+      const res = await fetch("/thewaitlist/api/admin/config", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
