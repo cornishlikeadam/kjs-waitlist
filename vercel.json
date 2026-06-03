@@ -1,3 +1,15 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/thewaitlist/",
+      "destination": "/thewaitlist",
+      "statusCode": 308
+    },
+    {
+      "source": "/thewaitlist/hidden-deck/",
+      "destination": "/thewaitlist/hidden-deck",
+      "statusCode": 308
+    }
+  ]
 }
