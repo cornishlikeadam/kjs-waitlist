@@ -41,7 +41,7 @@ function FunnelContainer() {
   const [showSun, setShowSun] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  // Pop-up state ("I am crushing ?" after 6s)
+  // Pop-up state ("Am I crushing ?" after 6s)
   const [showCrushingPopup, setShowCrushingPopup] = useState(false);
 
   // Admin deck states
@@ -85,7 +85,7 @@ function FunnelContainer() {
     return () => clearInterval(interval);
   }, []);
 
-  // Pop-up timer: trigger "I am crushing ?" exactly 6 seconds after reaching 'success' step
+  // Pop-up timer: trigger "Am I crushing ?" exactly 6 seconds after reaching 'success' step
   useEffect(() => {
     if (step !== "success") return;
 
@@ -332,7 +332,7 @@ function FunnelContainer() {
         )}
       </AnimatePresence>
 
-      {/* "I am crushing ?" Evasive Modal Pop-up (Triggers at 6s) */}
+      {/* "Am I crushing ?" Evasive Modal Pop-up (Triggers at 6s) */}
       <AnimatePresence>
         {showCrushingPopup && (
           <motion.div
@@ -355,7 +355,7 @@ function FunnelContainer() {
                 className="font-bubbles text-3xl font-extrabold tracking-normal text-transparent bg-clip-text bg-gradient-to-r from-[#8A5229] via-[#E65C00] to-[#F9D423] drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] uppercase py-1"
                 style={{ WebkitTextStroke: "1px #000", textShadow: "2px 2px 0px #000" }}
               >
-                I am crushing ?
+                Am I crushing ?
               </h2>
               
               <div className="flex flex-col sm:flex-row gap-4 max-w-xs mx-auto pt-2">
