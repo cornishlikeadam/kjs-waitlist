@@ -1,6 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import crypto from 'crypto';
+import db from './db';
 
 export interface TelemetryData {
   evadeAttempts: number;
@@ -31,111 +29,87 @@ export interface SystemConfig {
   activeSessions: number;
 }
 
-// Persistent file path within workspace for reliable local mock data
-const STORE_DIR = process.env.NODE_ENV === 'production' || process.env.VERCEL
-  ? '/tmp'
-  : path.join(process.cwd(), 'lib');
-const STORE_FILE = path.join(STORE_DIR, 'mock_db_store.json');
-
-interface MockDbSchema {
-  leads: Lead[];
-  systemConfig: SystemConfig;
-}
-
 const DEFAULT_CONFIG: SystemConfig = {
   id: 'singleton',
   adminPasscode: '9938',
   activeSessions: 3,
 };
 
-function ensureStoreExists(): MockDbSchema {
-  if (!fs.existsSync(STORE_DIR)) {
-    fs.mkdirSync(STORE_DIR, { recursive: true });
-  }
-
-  if (!fs.existsSync(STORE_FILE)) {
-    // Check if there is a seed file in the project's lib folder to seed from
-    const seedPath = path.join(process.cwd(), 'lib', 'mock_db_store.json');
-    if (fs.existsSync(seedPath)) {
-      try {
-        const seedData = fs.readFileSync(seedPath, 'utf-8');
-        fs.writeFileSync(STORE_FILE, seedData, 'utf-8');
-        return JSON.parse(seedData) as MockDbSchema;
-      } catch (e) {
-        console.error('Failed to copy seed database file to writable temp store.', e);
-      }
-    }
-
-    const initialData: MockDbSchema = {
-      leads: [],
-      systemConfig: DEFAULT_CONFIG,
-    };
-    fs.writeFileSync(STORE_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
-    return initialData;
-  }
-
-  try {
-    const dataStr = fs.readFileSync(STORE_FILE, 'utf-8');
-    return JSON.parse(dataStr) as MockDbSchema;
-  } catch (error) {
-    console.error('Failed to parse mock DB store file, resetting to default.', error);
-    const initialData: MockDbSchema = {
-      leads: [],
-      systemConfig: DEFAULT_CONFIG,
-    };
-    fs.writeFileSync(STORE_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
-    return initialData;
-  }
-}
-
-function saveStore(data: MockDbSchema) {
-  try {
-    if (!fs.existsSync(STORE_DIR)) {
-      fs.mkdirSync(STORE_DIR, { recursive: true });
-    }
-    fs.writeFileSync(STORE_FILE, JSON.stringify(data, null, 2), 'utf-8');
-  } catch (error) {
-    console.error('Failed to write to mock DB store file.', error);
-  }
-}
-
 export const dbMock = {
   // Leads
   async saveLead(leadData: Omit<Lead, 'id' | 'createdAt'>): Promise<Lead> {
-    const store = ensureStoreExists();
-    const newLead: Lead = {
-      ...leadData,
-      id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substring(2, 15),
-      createdAt: new Date().toISOString(),
+    const lead = await (db as any).lead.create({
+      data: {
+        name: leadData.name,
+        email: leadData.email,
+        phone: leadData.phone,
+        preferenceFood: leadData.preferenceFood,
+        preferenceVibe: leadData.preferenceVibe,
+        qualifierAnswer: leadData.qualifierAnswer,
+        selectedDate: new Date(leadData.selectedDate),
+        telemetry: leadData.telemetry as any,
+        aiPlanId: leadData.aiPlanId,
+      },
+    });
+    return {
+      ...lead,
+      selectedDate: lead.selectedDate.toISOString(),
+      createdAt: lead.createdAt.toISOString(),
+      telemetry: lead.telemetry as any,
     };
-    store.leads.push(newLead);
-    saveStore(store);
-    return newLead;
   },
 
   async getAllLeads(): Promise<Lead[]> {
-    const store = ensureStoreExists();
-    return store.leads;
+    const leads = await (db as any).lead.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
+    return leads.map((l: any) => ({
+      ...l,
+      selectedDate: l.selectedDate.toISOString(),
+      createdAt: l.createdAt.toISOString(),
+      telemetry: l.telemetry as any,
+    }));
   },
 
   async getLeadById(id: string): Promise<Lead | undefined> {
-    const store = ensureStoreExists();
-    return store.leads.find(l => l.id === id);
+    const l = await (db as any).lead.findUnique({
+      where: { id },
+    });
+    if (!l) return undefined;
+    return {
+      ...l,
+      selectedDate: l.selectedDate.toISOString(),
+      createdAt: l.createdAt.toISOString(),
+      telemetry: l.telemetry as any,
+    };
   },
 
   // SystemConfig
   async getSystemConfig(): Promise<SystemConfig> {
-    const store = ensureStoreExists();
-    return store.systemConfig;
+    let config = await (db as any).systemConfig.findUnique({
+      where: { id: 'singleton' },
+    });
+    if (!config) {
+      config = await (db as any).systemConfig.create({
+        data: {
+          id: 'singleton',
+          adminPasscode: '9938',
+          activeSessions: 3,
+        },
+      });
+    }
+    return config;
   },
 
-  async updateSystemConfig(config: Partial<Omit<SystemConfig, 'id'>>): Promise<SystemConfig> {
-    const store = ensureStoreExists();
-    store.systemConfig = {
-      ...store.systemConfig,
-      ...config,
-    };
-    saveStore(store);
-    return store.systemConfig;
+  async updateSystemConfig(configData: Partial<Omit<SystemConfig, 'id'>>): Promise<SystemConfig> {
+    await dbMock.getSystemConfig(); // ensure singleton exists
+    const config = await (db as any).systemConfig.update({
+      where: { id: 'singleton' },
+      data: {
+        adminPasscode: configData.adminPasscode,
+        activeSessions: configData.activeSessions,
+      },
+    });
+    return config;
   }
 };

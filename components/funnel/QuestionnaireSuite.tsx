@@ -284,7 +284,7 @@ export const QuestionnaireSuite: React.FC<QuestionnaireSuiteProps> = ({
             className="flex flex-col gap-5"
           >
             <div className="flex flex-col gap-1.5">
-              <h2 className="text-2xl font-black font-bubbles tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-blue-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] py-1">
+              <h2 className="text-2xl font-black font-bubbles tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A5229] via-[#E65C00] to-[#F9D423] drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] py-1">
                 {currentActiveStep.question}
               </h2>
             </div>

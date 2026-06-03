@@ -10601,6 +10601,33 @@
       "aiPlanId": null,
       "id": "f8c30dd0-bcd0-468f-8ffa-c59b9f208bd8",
       "createdAt": "2026-06-02T18:19:10.310Z"
+    },
+    {
+      "name": "Jane Test",
+      "email": "jane@example.com",
+      "phone": "5555555555",
+      "preferenceFood": "sushi",
+      "preferenceVibe": "arcade",
+      "qualifierAnswer": "chaotic",
+      "selectedDate": "2026-06-10T19:00:00.000Z",
+      "telemetry": {
+        "evadeAttempts": 3,
+        "timeSpent": 15.5,
+        "deviceType": "Desktop",
+        "cursorPath": [
+          {
+            "x": 100,
+            "y": 200,
+            "t": 1780422777000
+          }
+        ],
+        "velocityVectors": [
+          0
+        ]
+      },
+      "aiPlanId": null,
+      "id": "1b75cba6-1758-42b2-ba8a-ba1e7a104a15",
+      "createdAt": "2026-06-03T02:52:42.077Z"
     }
   ],
   "systemConfig": {
