@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// -------------------------------------------------------------
+// DATASOURCE CONFIGURATION
+// -------------------------------------------------------------
+// Default provider is PostgreSQL, which is highly recommended for production
+// due to its native support for the JSONB type in the `telemetry` field.
+//
+// FALLBACK TO SQLITE FOR LOCAL DEVELOPMENT:
+// To switch to SQLite, change the configuration block below:
+//
+// datasource db {
+//   provider = "sqlite"
+//   url      = "file:./dev.db"
+// }
+//
+// Note: When using SQLite, Prisma stores JSON fields as plain text strings.
+// -------------------------------------------------------------
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// The Lead model represents a user submission inside the micro-funnel,
+/// capturing contact information, interactive choices, session analytics,
+/// and telemetry tracking data.
+model Lead {
+  id              String   @id @default(uuid())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Basic User Identification
+  name            String
+  email           String
+  phone           String
+
+  // Multi-step Interactive Funnel Selections
+  preferenceFood  String   // e.g. "sushi" / "pasta" (curated options)
+  preferenceVibe  String   // e.g. "arcade" / "movies" (curated options)
+  qualifierAnswer String   // Playful qualifying custom open answers
+
+  // Date/Time Selections
+  selectedDate    DateTime // Selected date and time from the calendar picker
+
+  // Unstructured Biometric & Interactive Telemetry Event Tracking Log
+  // Stores session duration, evasion count, touch velocity vector angles, and device metadata.
+  telemetry       Json
+
+  // Optional AI Plan reference (identifies the generated date scenario)
+  aiPlanId        String?
+
+  @@index([createdAt(sort: Desc)])
+  @@index([email])
+}
+
+/// The SystemConfig model records global settings for the waitlist application,
+/// such as administrative passcodes and scarcity simulation values.
+/// This model acts as a singleton, with `id` constrained to "singleton".
+model SystemConfig {
+  id             String @id @default("singleton")
+  adminPasscode  String // Invisible gesture combination / token validation string
+  activeSessions Int    @default(3) // Dynamic Scarcity Engine simulation counter
+}

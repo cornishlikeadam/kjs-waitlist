@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 601.2 900">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #32cd32;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-7 {
+        stroke-width: 2.49px;
+      }
+
+      .cls-8 {
+        fill: #111;
+        font-size: 28.64px;
+        letter-spacing: .06em;
+      }
+
+      .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-5, .cls-13, .cls-14 {
+        isolation: isolate;
+      }
+
+      .cls-8, .cls-10, .cls-11, .cls-12 {
+        font-family: Helvetica-Bold, Helvetica;
+        font-weight: 700;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #ff1493;
+      }
+
+      .cls-15 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        stroke-width: 6.63px;
+      }
+
+      .cls-3, .cls-4, .cls-6 {
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        stroke-width: 6.1px;
+      }
+
+      .cls-4, .cls-5 {
+        stroke: #89cff0;
+      }
+
+      .cls-9 {
+        fill: #333;
+        font-family: Helvetica, Helvetica;
+        font-size: 21.48px;
+      }
+
+      .cls-16, .cls-10, .cls-11, .cls-12 {
+        fill: #ff8c00;
+      }
+
+      .cls-10 {
+        letter-spacing: .2em;
+      }
+
+      .cls-10, .cls-11, .cls-12 {
+        font-size: 18.41px;
+      }
+
+      .cls-11 {
+        letter-spacing: .22em;
+      }
+
+      .cls-12 {
+        letter-spacing: .22em;
+      }
+
+      .cls-17 {
+        letter-spacing: .14em;
+      }
+
+      .cls-5 {
+        opacity: .6;
+        stroke-width: 1.66px;
+      }
+
+      .cls-18 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        stroke-width: 11.45px;
+      }
+
+      .cls-6, .cls-7 {
+        stroke: #ff8c00;
+      }
+
+      .cls-13 {
+        fill: #708090;
+        font-family: Arial-Black, 'Arial Black';
+        font-size: 26.59px;
+        font-weight: 800;
+      }
+
+      .cls-19 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-14 {
+        fill: #ff1493;
+        font-family: BrushScriptMT, 'Brush Script MT';
+        font-size: 24.55px;
+      }
+
+      .cls-20 {
+        letter-spacing: .11em;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-1539.44" y1="599.92" x2="-1539.44" y2="597.87" gradientTransform="translate(7732.14 87534.4) scale(5 -145)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff1493"/>
+      <stop offset=".5" stop-color="#ff8c00"/>
+      <stop offset="1" stop-color="#ffbc00"/>
+    </linearGradient>
+  </defs>
+  <g id="TEXT">
+    <g>
+      <path d="M222.5,874.17v1.78h-5.82v-7h5.69v1.78h-3.37v.82h2.96v1.7h-2.96v.92h3.5Z"/>
+      <path d="M234.66,875.95l-.02-3.19-1.52,2.56h-1.04l-1.52-2.45v3.08h-2.15v-7h1.94l2.28,3.73,2.22-3.73h1.94l.02,7h-2.15Z"/>
+      <path d="M247.72,874.73h-2.66l-.47,1.22h-2.4l3.06-7h2.32l3.06,7h-2.44l-.47-1.22ZM247.07,873.03l-.68-1.76-.68,1.76h1.36Z"/>
+      <path d="M256.01,868.95h2.36v7h-2.36v-7Z"/>
+      <path d="M264.51,868.95h2.36v5.17h3.16v1.83h-5.52v-7Z"/>
+      <path d="M283.24,875.39l.76-1.72c.66.39,1.54.64,2.31.64.67,0,.91-.14.91-.38,0-.88-3.87-.17-3.87-2.78,0-1.3,1.09-2.36,3.26-2.36.94,0,1.91.2,2.64.61l-.71,1.71c-.69-.35-1.34-.52-1.95-.52-.69,0-.91.2-.91.44,0,.84,3.87.14,3.87,2.72,0,1.28-1.09,2.36-3.26,2.36-1.17,0-2.35-.29-3.05-.72Z"/>
+      <path d="M295.25,868.95h2.36v7h-2.36v-7Z"/>
+      <path d="M308.38,872.26h2.05v2.96c-.85.58-2.02.89-3.05.89-2.26,0-3.91-1.51-3.91-3.66s1.65-3.66,3.96-3.66c1.38,0,2.49.48,3.2,1.35l-1.51,1.33c-.44-.51-.95-.77-1.57-.77-1.04,0-1.7.67-1.7,1.75s.66,1.75,1.67,1.75c.29,0,.57-.05.86-.17v-1.77Z"/>
+      <path d="M323.34,868.95v7h-1.94l-2.66-3.18v3.18h-2.3v-7h1.94l2.66,3.18v-3.18h2.3Z"/>
+      <path d="M334.25,874.73h-2.66l-.47,1.22h-2.4l3.06-7h2.32l3.06,7h-2.44l-.47-1.22ZM333.6,873.03l-.68-1.76-.68,1.76h1.36Z"/>
+      <path d="M343.71,870.78h-2.05v-1.83h6.46v1.83h-2.05v5.17h-2.36v-5.17Z"/>
+      <path d="M353.57,872.8v-3.85h2.36v3.78c0,1.07.41,1.47,1.07,1.47s1.07-.4,1.07-1.47v-3.78h2.32v3.85c0,2.1-1.26,3.31-3.41,3.31s-3.41-1.21-3.41-3.31Z"/>
+      <path d="M369.47,874.19h-.64v1.76h-2.36v-7h3.37c1.95,0,3.19,1.02,3.19,2.64,0,1.01-.48,1.77-1.32,2.2l1.47,2.16h-2.52l-1.19-1.76ZM369.69,870.77h-.86v1.64h.86c.65,0,.96-.31.96-.82s-.31-.82-.96-.82Z"/>
+      <path d="M384.74,874.17v1.78h-5.82v-7h5.69v1.78h-3.37v.82h2.96v1.7h-2.96v.92h3.5Z"/>
+    </g>
+    <g>
+      <rect x="30.46" y="84.16" width="205.59" height="1.31"/>
+      <rect x="361" y="84.16" width="209.74" height="1.31"/>
+    </g>
+  </g>
+  <g id="Layer_31" data-name="Layer 31">
+    <g id="background">
+      <rect class="cls-18" x="31.56" y="546.48" width="538.09" height="296.63"/>
+      <rect class="cls-15" x="31.56" y="546.48" width="6.73" height="296.63"/>
+      <path class="cls-5" d="M51.74,822.66c103.13-9.55,199.54-11.59,289.22-6.14,89.68,5.46,163.67,4.09,221.96-4.09"/>
+    </g>
+    <g id="logo_block" data-name="logo block">
+      <g id="es_chevron" data-name="es chevron">
+        <line class="cls-6" x1="119.47" y1="663.05" x2="143.56" y2="702.58"/>
+        <line class="cls-6" x1="119.47" y1="663.05" x2="146.05" y2="627.39"/>
+      </g>
+      <g id="es_bar" data-name="es bar">
+        <line class="cls-4" x1="148.06" y1="619.28" x2="139.07" y2="712.38"/>
+      </g>
+      <g id="es_figure" data-name="es figure">
+        <line class="cls-3" x1="168.95" y1="665.11" x2="147.91" y2="636.7"/>
+        <line class="cls-3" x1="168.95" y1="665.11" x2="199.45" y2="640.8"/>
+        <line class="cls-3" x1="168.95" y1="665.11" x2="145.19" y2="686.24"/>
+        <line class="cls-3" x1="168.95" y1="665.11" x2="193.53" y2="697.67"/>
+      </g>
+      <g id="es_head" data-name="es head">
+        <ellipse class="cls-16" cx="173.9" cy="640.8" rx="4.95" ry="7.53"/>
+      </g>
+    </g>
+    <g id="divider">
+      <line class="cls-2" x1="203.74" y1="591.49" x2="203.74" y2="796.06"/>
+      <line class="cls-7" x1="207.78" y1="591.49" x2="207.78" y2="796.06"/>
+      <line class="cls-1" x1="211.82" y1="591.49" x2="211.82" y2="796.06"/>
+    </g>
+    <g id="text_block" data-name="text block">
+      <text class="cls-8" transform="translate(226.61 611.95) scale(.66 1)"><tspan x="0" y="0">KJ CORNISH</tspan></text>
+      <text class="cls-13" transform="translate(226.61 648.77) scale(.66 1)"><tspan class="cls-17" x="0" y="0">N</tspan><tspan class="cls-20" x="25.88" y="0">O</tspan><tspan class="cls-17" x="51.07" y="0">T2L8</tspan></text>
+      <text class="cls-14" transform="translate(226.61 685.59) scale(.66 1)"><tspan x="0" y="0">continuity in motion</tspan></text>
+      <g id="contact_rows" data-name="contact rows">
+        <text class="cls-10" transform="translate(226.61 730.6) scale(.66 1)"><tspan x="0" y="0">P</tspan></text>
+        <text class="cls-9" transform="translate(245.45 730.6) scale(.66 1)"><tspan x="0" y="0">954.546.4266</tspan></text>
+        <text class="cls-11" transform="translate(226.61 761.29) scale(.66 1)"><tspan x="0" y="0">E</tspan></text>
+        <text class="cls-9" transform="translate(245.45 761.29) scale(.66 1)"><tspan x="0" y="0">kendren@proton.me</tspan></text>
+        <text class="cls-12" transform="translate(226.61 791.97) scale(.66 1)"><tspan x="0" y="0">W</tspan></text>
+        <text class="cls-9" transform="translate(245.45 791.97) scale(.66 1)"><tspan x="0" y="0">ww</tspan><tspan class="cls-19" x="31.03" y="0">w</tspan><tspan x="45.36" y="0">.kendren.us</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

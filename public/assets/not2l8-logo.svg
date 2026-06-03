@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="KJC_Logo" data-name="KJC Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1471.87 897.39">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff1493;
+        stroke: #ff8c00;
+        stroke-width: 60px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-miterlimit: 8;
+      }
+
+      .cls-1, .cls-3, .cls-5 {
+        stroke-linecap: round;
+      }
+
+      .cls-6 {
+        letter-spacing: .14em;
+      }
+
+      .cls-2 {
+        fill: #708090;
+        font-family: Arial-Black, 'Arial Black';
+        font-size: 72px;
+        font-weight: 800;
+        isolation: isolate;
+        stroke: #ed1c24;
+      }
+
+      .cls-3 {
+        stroke: #ff1493;
+        stroke-width: 34.74px;
+      }
+
+      .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: #ff8c00;
+        stroke: #708090;
+      }
+
+      .cls-5 {
+        stroke: #89cff0;
+        stroke-width: 32px;
+      }
+
+      .cls-7 {
+        letter-spacing: .11em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_GoldChevron" data-name="Layer GoldChevron">
+    <line id="chevron-top" class="cls-1" x1="429.12" y1="373.73" x2="584.88" y2="541.77"/>
+    <line id="chevron-bottom" class="cls-1" x1="429.12" y1="373.73" x2="600.96" y2="222.17"/>
+  </g>
+  <g id="Layer_NavyBar" data-name="Layer NavyBar">
+    <line id="navy-bar" class="cls-5" x1="613.93" y1="187.69" x2="555.82" y2="583.44"/>
+  </g>
+  <g id="Layer_RedFigure" data-name="Layer RedFigure">
+    <line id="arm-upper-left" class="cls-3" x1="748.97" y1="382.5" x2="612.98" y2="261.72"/>
+    <line id="arm-upper-right" class="cls-3" x1="748.97" y1="382.5" x2="946.16" y2="279.15"/>
+    <line id="leg-lower-left" class="cls-3" x1="748.97" y1="382.5" x2="595.41" y2="472.31"/>
+    <line id="leg-lower-right" class="cls-3" x1="748.97" y1="382.5" x2="907.89" y2="520.91"/>
+  </g>
+  <g id="Layer_Head" data-name="Layer Head">
+    <circle id="head" class="cls-4" cx="780.97" cy="279.15" r="32"/>
+  </g>
+  <g id="Layer_Wordmark" data-name="Layer Wordmark">
+    <text id="wordmark" class="cls-2" transform="translate(509.64 682.5)"><tspan class="cls-6" x="0" y="0">N</tspan><tspan class="cls-7" x="69.91" y="0">O</tspan><tspan class="cls-6" x="137.96" y="0">T2L8</tspan></text>
+  </g>
+</svg>
