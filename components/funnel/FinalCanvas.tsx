@@ -372,6 +372,28 @@ export const FinalCanvas: React.FC<FinalCanvasProps> = ({
             learn more about your king.
           </motion.a>
         </div>
+
+        {/* Social Media Links */}
+        <div className="flex justify-center gap-4 pt-2">
+          <motion.a
+            whileHover={{ scale: 1.05, rotate: -2 }}
+            href="https://www.instagram.com/thxkendren"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 border-2 border-black bg-pink-500 hover:bg-pink-400 text-white font-extrabold text-[10px] tracking-widest uppercase transition-all shadow-[2.5px_2.5px_0px_#000] cursor-pointer"
+          >
+            <span>Instagram</span>
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.05, rotate: 2 }}
+            href="https://www.linkedin.com/in/kendren-cornish/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 border-2 border-black bg-[#0077b5] hover:bg-[#006294] text-white font-extrabold text-[10px] tracking-widest uppercase transition-all shadow-[2.5px_2.5px_0px_#000] cursor-pointer"
+          >
+            <span>LinkedIn</span>
+          </motion.a>
+        </div>
       </div>
     </div>
   );
