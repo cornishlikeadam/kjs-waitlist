@@ -114,7 +114,7 @@ function FunnelContainer() {
     
     if (adminPasscode.trim() === "9938") {
       document.cookie = "admin_passcode=9938; path=/; max-age=86400";
-      window.location.href = "/hidden-deck";
+      window.location.href = "/thewaitlist/hidden-deck";
     } else {
       setAuthError("INCORRECT PASSCODE.");
     }
@@ -197,7 +197,7 @@ function FunnelContainer() {
     <div 
       className="min-h-screen w-full flex flex-col overflow-y-auto selection:bg-yellow-400 selection:text-black font-sans relative"
       style={{
-        backgroundImage: 'url("/assets/kj-background.png")',
+        backgroundImage: 'url("/thewaitlist/assets/kj-background.png")',
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

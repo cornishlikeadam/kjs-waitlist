@@ -1,7 +1,7 @@
 export const KJ_IDENTITY_MANIFEST = {
   profile: {
     name: "KJ",
-    avatarUrl: "/assets/kj-smiling-portrait.jpg",
+    avatarUrl: "/thewaitlist/assets/kj-smiling-portrait.jpg",
     bioHook: "I'll handle the plans; you just bring the sexy."
   },
   designSystem: {

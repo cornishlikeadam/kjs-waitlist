@@ -51,7 +51,7 @@ export default function AdminDashboard() {
       if (res.status === 401) {
         setError("Unauthorized access. Redirecting...");
         setTimeout(() => {
-          window.location.href = "/";
+          window.location.href = "/thewaitlist/";
         }, 1500);
         return;
       }
@@ -110,7 +110,7 @@ export default function AdminDashboard() {
   const handleLogout = () => {
     // Clear admin auth cookie
     document.cookie = "admin_passcode=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-    window.location.href = "/";
+    window.location.href = "/thewaitlist/";
   };
 
   if (loading) {
