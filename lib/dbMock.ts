@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 
 export interface TelemetryData {
   evadeAttempts: number;
@@ -31,7 +32,9 @@ export interface SystemConfig {
 }
 
 // Persistent file path within workspace for reliable local mock data
-const STORE_DIR = path.join(process.cwd(), 'lib');
+const STORE_DIR = process.env.NODE_ENV === 'production' || process.env.VERCEL
+  ? '/tmp'
+  : path.join(process.cwd(), 'lib');
 const STORE_FILE = path.join(STORE_DIR, 'mock_db_store.json');
 
 interface MockDbSchema {
@@ -51,6 +54,18 @@ function ensureStoreExists(): MockDbSchema {
   }
 
   if (!fs.existsSync(STORE_FILE)) {
+    // Check if there is a seed file in the project's lib folder to seed from
+    const seedPath = path.join(process.cwd(), 'lib', 'mock_db_store.json');
+    if (fs.existsSync(seedPath)) {
+      try {
+        const seedData = fs.readFileSync(seedPath, 'utf-8');
+        fs.writeFileSync(STORE_FILE, seedData, 'utf-8');
+        return JSON.parse(seedData) as MockDbSchema;
+      } catch (e) {
+        console.error('Failed to copy seed database file to writable temp store.', e);
+      }
+    }
+
     const initialData: MockDbSchema = {
       leads: [],
       systemConfig: DEFAULT_CONFIG,
